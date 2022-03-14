@@ -1,0 +1,15 @@
+header{
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    background-color: black;
+}
+
+.logo-container{
+    width: 15%;
+    max-width: 200px;
+}
+
+.logo-container img{
+    width: 100%;
+}
