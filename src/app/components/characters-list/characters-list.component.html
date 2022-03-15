@@ -1,3 +1,8 @@
-<div class="characters-list">
-    <app-character *ngFor="let character of characters" [character]="character"></app-character>
+<div class="characters-container">
+    <form class="characters__search-bar">
+        <input [(ngModel)]="searchValue" (keyup)="onSearch()" name="searchValue" type="text" placeholder="Search a character">
+    </form>
+    <div class="characters-list">
+        <app-character *ngFor="let character of characters" [character]="character"></app-character>
+    </div>
 </div>

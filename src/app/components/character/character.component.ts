@@ -38,9 +38,9 @@ export class CharacterComponent implements OnInit {
       borderRadius: '2px'
     }
 
-    if(this.character.house === 'Gryffindor') this.houseColor={color: '#C40000'}
-    if(this.character.house === 'Ravenclaw') this.houseColor={color: '#35679D'}
-    if(this.character.house === 'Slytherin') this.houseColor={color: '#357638'}
+    if(this.character.house === 'Gryffindor') this.houseColor={color: '#950606'}
+    if(this.character.house === 'Ravenclaw') this.houseColor={color: '#274462'}
+    if(this.character.house === 'Slytherin') this.houseColor={color: '#234e25'}
     if(this.character.house === 'Hufflepuff') this.houseColor={color: '#FFB300'}
 
   }

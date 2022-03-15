@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HarryPotterDataService } from 'src/app/services/harry-potter-data.service';
 import { Character } from 'src/app/one-character';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-characters-list',
@@ -10,6 +11,8 @@ import { Character } from 'src/app/one-character';
 export class CharactersListComponent implements OnInit {
 
   characters: any = []
+  charactersOriginal: any = []
+  searchValue:string =""
 
   constructor(private data: HarryPotterDataService) { }
 
@@ -17,8 +20,14 @@ export class CharactersListComponent implements OnInit {
     this.data.getCharacters()
         .subscribe( datos =>{ 
             console.log(datos)
-            return this.characters = datos
+            this.characters = datos
+            this.charactersOriginal = datos
         })
+  }
+
+  onSearch(){
+    const filtered = this.charactersOriginal.filter((c:any)=> c.name.toLowerCase().includes(this.searchValue.toLowerCase()))
+    this.characters = filtered
   }
 
 }
