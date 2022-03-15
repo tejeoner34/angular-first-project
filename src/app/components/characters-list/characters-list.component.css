@@ -1,0 +1,8 @@
+.characters-list{
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    background-color: #112026;
+}

@@ -9,15 +9,15 @@ import { Character } from 'src/app/one-character';
 })
 export class CharactersListComponent implements OnInit {
 
-  characters: Character[] = []
+  characters: any = []
 
   constructor(private data: HarryPotterDataService) { }
 
   ngOnInit() {
     this.data.getCharacters()
         .subscribe( datos =>{ 
-            console.log(datos.personajes)
-            return this.characters = datos.personajes
+            console.log(datos)
+            return this.characters = datos
         })
   }
 

@@ -8,11 +8,11 @@ import { HarryPotterData } from '../character';
 })
 export class HarryPotterDataService {
 
-  fetchUrl = 'https://fedeperin-harry-potter-api.herokuapp.com/db'
+  fetchUrl = 'http://hp-api.herokuapp.com/api/characters'
 
   constructor(private http: HttpClient) { }
 
-  getCharacters(): Observable<HarryPotterData>{
+  getCharacters(): Observable<any>{
     return this.http.get<HarryPotterData>(this.fetchUrl)
   } 
 }
