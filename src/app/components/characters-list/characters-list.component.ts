@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HarryPotterDataService } from 'src/app/services/harry-potter-data.service';
-import { Character } from 'src/app/one-character';
-import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-characters-list',

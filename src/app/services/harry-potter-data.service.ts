@@ -13,6 +13,6 @@ export class HarryPotterDataService {
   constructor(private http: HttpClient) { }
 
   getCharacters(): Observable<any>{
-    return this.http.get<HarryPotterData>(this.fetchUrl)
+    return this.http.get(this.fetchUrl)
   } 
 }
