@@ -1,0 +1,12 @@
+<div (click)="onClick()" class="popup-wrapper"></div>
+<div class="popup">
+  <div class="popup__info-container">
+    <span (click)="onClick()" class="popup__X">X</span>
+    <h2>{{ data.name }}</h2>
+    <h3>
+      Date of Birth:
+      {{ data.dateOfBirth === "" ? "Unknown" : data.dateOfBirth }}
+    </h3>
+    <h3>Ancestry: {{ data.ancestry === "" ? "Unknown" : data.ancestry }}</h3>
+  </div>
+</div>

@@ -1,9 +1,14 @@
-<div [ngStyle]="characterCardStyle" class="character-card">
-    <div [ngStyle]="characterStyle" class="character-card__img-container">
-        <!--<img src="{{character.imagen}}" alt="imagen de {{character.personaje}}">-->
+<app-popup (btnClick)="closePopup()" *ngIf="displayPopup" [data]="character" ></app-popup>
+<div (click)="openPopup()" [ngStyle]="characterCardStyle" class="character-card">
+    <div *ngIf="hasImage; else showThis" [ngStyle]="characterStyle" class="character-card__img-container">
     </div>
+    <ng-template #showThis>
+        <div class="character-card__no-image">
+            <h3>No image available</h3>
+        </div>
+    </ng-template>
     <div class="character-card__info">
-        <h3 >{{character.name}}</h3>
+        <h3>{{character.name}}</h3>
         <h4 [ngStyle]="houseColor">{{character.house}}</h4>
     </div>
 </div>

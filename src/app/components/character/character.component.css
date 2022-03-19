@@ -6,12 +6,23 @@
     justify-content: center;
     background-color: rgb(100, 67, 25);
     width: 250px;
+    height: 427px;
+    cursor: pointer;
+}
+
+.character-card > *{
+    cursor: pointer;
 }
 
 .character-card__info{
     display: flex;
     flex-direction: column;
     align-items: center;
+    
+}
+
+.character-card__info >*{
+    cursor: pointer;
 }
 
 .character-card__info h3{
@@ -24,3 +35,14 @@
     text-shadow: 1px 2px 3px #666;
 }
 
+
+.character-card__no-image{
+    height: 300px;
+    display: flex;
+    align-items: center;
+}
+
+.character-card__no-image h3{
+    transform: rotate(310deg);
+    font-size: 1.9rem;
+}

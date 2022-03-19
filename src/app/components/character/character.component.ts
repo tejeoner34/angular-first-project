@@ -13,12 +13,16 @@ export class CharacterComponent implements OnInit {
   characterStyle = {}
   characterCardStyle = {}
   houseColor= {}
+  hasImage: boolean = false
+  displayPopup: boolean = false
 
 
 
   constructor() { }
 
   ngOnInit(): void {
+
+    this.character.image === ""? this.hasImage = false: this.hasImage = true
 
     this.characterStyle = {
       backgroundImage: `url("${this.character?.image}")`,
@@ -43,6 +47,16 @@ export class CharacterComponent implements OnInit {
     if(this.character.house === 'Slytherin') this.houseColor={color: '#234e25'}
     if(this.character.house === 'Hufflepuff') this.houseColor={color: '#FFB300'}
 
+  }
+
+  closePopup(){
+    this.displayPopup = false
+    console.log(this.character.name)
+    console.log(this.displayPopup)
+  }
+
+  openPopup(){
+    this.displayPopup = true
   }
 
 }
