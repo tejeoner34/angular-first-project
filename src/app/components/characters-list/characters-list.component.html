@@ -1,8 +1,24 @@
 <div class="characters-container">
-    <form class="characters__search-bar">
-        <input [(ngModel)]="searchValue" (keyup)="onSearch()" name="searchValue" type="text" placeholder="Search a character">
-    </form>
-    <div class="characters-list">
-        <app-character *ngFor="let character of characters" [character]="character"></app-character>
+  <form class="characters__search-bar">
+    <input
+      [(ngModel)]="searchValue"
+      (keyup)="onSearch()"
+      name="searchValue"
+      type="text"
+      placeholder="Search a character"
+    />
+  </form>
+  <div class="characters-list">
+    <div *ngFor="let character of characters; let i = index">
+      <app-character
+        [character]="character"
+        *ngIf="i + 1 === characters.length"
+        #theLastList
+      ></app-character>
+      <app-character
+        [character]="character"
+        *ngIf="i + 1 != characters.length"
+      ></app-character>
     </div>
+  </div>
 </div>
