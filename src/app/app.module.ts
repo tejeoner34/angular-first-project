@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CharacterComponent } from './components/character/character.component'
 import { FormsModule } from '@angular/forms';
 import { PopupComponent } from './components/popup/popup.component';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PopupComponent } from './components/popup/popup.component';
     HeaderComponent,
     CharactersListComponent,
     CharacterComponent,
-    PopupComponent
+    PopupComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,

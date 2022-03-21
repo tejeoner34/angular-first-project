@@ -1,7 +1,10 @@
 <div (click)="onClick()" class="popup-wrapper"></div>
 <div class="popup">
+  <span (click)="onClick()" class="popup__X">X</span>
+  <div class="popup__character-img-container">
+    <img [src]="data.image" alt="">
+  </div>
   <div class="popup__info-container">
-    <span (click)="onClick()" class="popup__X">X</span>
     <h2>{{ data.name }}</h2>
     <h3>
       Date of Birth:

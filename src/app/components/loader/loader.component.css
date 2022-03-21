@@ -1,0 +1,22 @@
+.loader{
+    position: relative;
+    background-color: #112026;
+    display: flex;
+    padding: 2rem;
+    justify-content: center;
+    height: 5rem;
+}
+
+@keyframes loader {
+    0% {top: 0;}
+    50%{top:20px;}
+    100%{top: 0;}
+}
+
+.loader__img-container{
+    position: absolute;
+    animation-name: loader;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+

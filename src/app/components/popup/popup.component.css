@@ -4,27 +4,40 @@
     left: 0;
     width: 100vw;
     height: 100vh;
+    background: black;
+    opacity: .6;
 }
 
 .popup{
     display: flex;
-    flex-direction: column;
+    gap: 2rem;
     justify-content: center;
     align-items: center;
-    background-color: white;
     position: fixed;
     width: 90vw;
-    top: 35%;
+    top: 190px;
     left: 50%;
     margin-left: -45vw;
     background-image: url("../../../assets/img/pexels-pixabay-235985.jpg");
     z-index: 1000;
 }
 
-.popup__info-container{
-    display: contents;
-    position: relative;
+.popup__character-img-container{
+    width: 40%;
+    max-width: 300px;
+    display: flex;
+    padding: 1rem;
+}
+
+.popup__character-img-container img{
     width: 100%;
+}
+
+.popup__info-container{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 60%;
 }
 
 .popup__X{
@@ -34,4 +47,12 @@
     font-size: 2rem;
     font-weight: 800;
     cursor: pointer;
+}
+
+@media (max-width: 650px) {
+
+    .popup{
+        flex-direction: column;
+    }
+    
 }
