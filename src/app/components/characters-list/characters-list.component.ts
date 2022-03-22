@@ -26,6 +26,7 @@ export class CharactersListComponent implements OnInit, AfterViewInit {
   searchValue: string = '';
   observer: any;
   isLoading: boolean = false;
+  isFiltering: boolean = false
 
   constructor(private data: HarryPotterDataService) {}
 
@@ -48,10 +49,12 @@ export class CharactersListComponent implements OnInit, AfterViewInit {
   }
 
   onSearch() {
+    this.isFiltering = true;
     const filtered = this.charactersShown.filter((c: any) =>
       c.name.toLowerCase().includes(this.searchValue.toLowerCase())
     );
     this.characters = filtered;
+    if(this.searchValue === "") this.isFiltering = false
   }
 
   intersectionObserver() {
@@ -62,7 +65,7 @@ export class CharactersListComponent implements OnInit, AfterViewInit {
     };
 
     this.observer = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting) {
+      if (entries[0].isIntersecting && !this.isFiltering) {
         if (this.charactersOriginal.length > 20) {
           console.log(this.characters.length)
           this.isLoading = true;
