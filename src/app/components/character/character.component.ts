@@ -51,8 +51,6 @@ export class CharacterComponent implements OnInit {
 
   closePopup(){
     this.displayPopup = false
-    console.log(this.character.name)
-    console.log(this.displayPopup)
   }
 
   openPopup(){

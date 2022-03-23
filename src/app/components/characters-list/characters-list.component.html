@@ -1,13 +1,19 @@
 <div class="characters-container">
-  <form class="characters__search-bar">
-    <input
-      [(ngModel)]="searchValue"
-      (keyup)="onSearch()"
-      name="searchValue"
-      type="text"
-      placeholder="Search a character"
-    />
-  </form>
+  <div class="characters__search-bar-container">
+    <form class="characters__search-bar">
+      <input
+        [(ngModel)]="searchValue"
+        (keyup)="onSearch()"
+        name="searchValue"
+        type="text"
+        placeholder="Search by character name"
+      />
+    </form>
+    <form class="characters__search-by-house" (ngSubmit)="onFilterByHouse()"> 
+      <input placeholder="Search by Character House" type="text" name="houseSearch" [(ngModel)]="houseSearch" id="houseSearch">
+      <button type="submit">Search By House</button>
+    </form>
+  </div>
   <div class="characters-list">
     <div *ngFor="let character of characters; let i = index">
       <app-character

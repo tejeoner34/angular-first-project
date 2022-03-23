@@ -4,9 +4,34 @@
     justify-content: center;
 }
 
-.characters__search-bar input{
-    width: 50%;
+.characters__search-bar-container{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.characters__search-bar-container input{
     padding: .6rem;
+    border-radius: 5px;
+}
+
+
+.characters__search-by-house{
+    display: flex;
+    gap: 1rem;
+}
+
+.characters__search-by-house button{
+    background-color: #daaf3d;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.characters__search-by-house button:hover{
+    background-color: #ad8d35;
 }
 
 .characters-list{
