@@ -9,7 +9,7 @@ export class HeaderComponent implements OnInit {
 
 
   isPlaying: boolean = false
-  audio = new Audio("../../../assets/music/Harry Potter Theme Song.mp3")
+  audio = new Audio("assets/music/Harry Potter Theme Song.mp3")
 
   constructor() { }
 
