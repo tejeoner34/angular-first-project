@@ -35,7 +35,7 @@ export class CharacterComponent implements OnInit {
     }
 
     this.characterCardStyle = {
-      backgroundImage: `url("../../assets/img/pexels-pixabay-235985.jpg")`,
+      backgroundImage: `url("assets/img/pexels-pixabay-235985.jpg")`,
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
