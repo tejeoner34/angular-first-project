@@ -8,7 +8,7 @@ import { HarryPotterData } from '../character';
 })
 export class HarryPotterDataService {
 
-  fetchUrl = 'http://hp-api.herokuapp.com/api/characters'
+  fetchUrl = 'https://hp-api.herokuapp.com/api/characters'
 
   constructor(private http: HttpClient) { }
 
