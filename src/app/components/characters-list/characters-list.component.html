@@ -1,30 +1,24 @@
 <div class="characters-container">
-  <div class="characters__search-bar-container">
+  <div class="open-filter__container">
+    <button (click)="onShowFilters()" class="{{showFilters? 'open-filter__button-close' : 'open-filter__button'}}">
+      {{showFilters ? 'Close' : 'Show Filters'}}
+    </button>
+  </div>
+  <div *ngIf="showFilters" class="characters__search-bar-container">
     <form class="characters__search-bar">
-      <input
-        [(ngModel)]="searchValue"
-        (keyup)="onSearch()"
-        name="searchValue"
-        type="text"
-        placeholder="Search by character name"
-      />
+      <input [(ngModel)]="searchValue" (keyup)="onSearch()" name="searchValue" type="text"
+        placeholder="Search by character name" />
     </form>
-    <form class="characters__search-by-house" (ngSubmit)="onFilterByHouse()"> 
-      <input placeholder="Search by Character House" type="text" name="houseSearch" [(ngModel)]="houseSearch" id="houseSearch">
+    <form class="characters__search-by-house" (ngSubmit)="onFilterByHouse()">
+      <input placeholder="Search by Character House" type="text" name="houseSearch" [(ngModel)]="houseSearch"
+        id="houseSearch">
       <button type="submit">Search By House</button>
     </form>
   </div>
   <div class="characters-list">
     <div *ngFor="let character of characters; let i = index">
-      <app-character
-        [character]="character"
-        *ngIf="i + 1 === characters.length"
-        #theLastList
-      ></app-character>
-      <app-character
-        [character]="character"
-        *ngIf="i + 1 != characters.length"
-      ></app-character>
+      <app-character [character]="character" *ngIf="i + 1 === characters.length" #theLastList></app-character>
+      <app-character [character]="character" *ngIf="i + 1 != characters.length"></app-character>
     </div>
   </div>
   <app-loader *ngIf="isLoading"></app-loader>

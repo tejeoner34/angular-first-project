@@ -31,7 +31,7 @@ export class CharacterComponent implements OnInit {
       backgroundSize: 'cover',
       width: '200px',
       height: '300px',
-      borderRadius: '5px'
+      borderRadius: '5px',
     }
 
     this.characterCardStyle = {
@@ -50,11 +50,11 @@ export class CharacterComponent implements OnInit {
   }
 
   closePopup(){
-    this.displayPopup = false
+    if(this.displayPopup) this.displayPopup = false
   }
 
   openPopup(){
-    this.displayPopup = true
+    if(!this.displayPopup) this.displayPopup = true
   }
 
 }

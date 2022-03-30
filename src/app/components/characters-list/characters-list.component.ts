@@ -7,6 +7,8 @@ import {
   ViewChildren,
 } from '@angular/core';
 import { HarryPotterDataService } from 'src/app/services/harry-potter-data.service';
+import { FilterContextService } from 'src/app/services/filter-context.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-characters-list',
@@ -28,8 +30,12 @@ export class CharactersListComponent implements OnInit, AfterViewInit {
   observer: any;
   isLoading: boolean = false;
   isFiltering: boolean = false;
+  showFilters: boolean = false;
+  subscription!: Subscription
 
-  constructor(private data: HarryPotterDataService) {}
+  constructor(private data: HarryPotterDataService, private showFiltersService: FilterContextService) {
+    this.subscription = showFiltersService.onToggle().subscribe((value)=> this.showFilters = value)
+  }
 
   ngOnInit() {
     this.data.getCharacters().subscribe((datos) => {
@@ -46,6 +52,10 @@ export class CharactersListComponent implements OnInit, AfterViewInit {
     this.theLastList.changes.subscribe((d) => {
       if (d.last) this.observer.observe(d.last.nativeElement);
     });
+  }
+
+  onShowFilters(){
+    this.showFiltersService.toggleShowFilters()
   }
 
   onSearch() {

@@ -4,6 +4,28 @@
     justify-content: center;
 }
 
+.open-filter__container{
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.open-filter__button{
+    background-color: #daaf3d;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: .6rem;
+}
+
+.open-filter__button-close{
+    background-color: #8a7029;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: .6rem;
+}
+
 .characters__search-bar-container{
     padding: 1rem;
     display: flex;
