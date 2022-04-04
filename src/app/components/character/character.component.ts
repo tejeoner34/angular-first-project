@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Character } from 'src/app/one-character';
-
+import { TestPipe } from 'src/app/test.pipe';
 @Component({
   selector: 'app-character',
   templateUrl: './character.component.html',

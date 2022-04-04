@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -10,6 +11,13 @@ import { CharacterComponent } from './components/character/character.component'
 import { FormsModule } from '@angular/forms';
 import { PopupComponent } from './components/popup/popup.component';
 import { LoaderComponent } from './components/loader/loader.component';
+import { AboutComponent } from './pages/about/about.component';
+import { TestPipe } from './test.pipe';
+
+const appRoutes: Routes = [
+  {path: "", component: CharactersListComponent},
+  {path: "about", component: AboutComponent}
+]
 
 @NgModule({
   declarations: [
@@ -18,12 +26,15 @@ import { LoaderComponent } from './components/loader/loader.component';
     CharactersListComponent,
     CharacterComponent,
     PopupComponent,
-    LoaderComponent
+    LoaderComponent,
+    AboutComponent,
+    TestPipe
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]

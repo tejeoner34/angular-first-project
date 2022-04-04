@@ -9,6 +9,6 @@
     </ng-template>
     <div class="character-card__info">
         <h3>{{character.name}}</h3>
-        <h4 [ngStyle]="houseColor">{{character.house}}</h4>
+        <h4 [ngStyle]="houseColor">{{character.house | testPipe }}</h4>
     </div>
 </div>
