@@ -4,15 +4,14 @@ import { Observable } from 'rxjs';
 import { HarryPotterData } from '../character';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class HarryPotterDataService {
+  fetchUrl = 'https://hp-api.onrender.com/api/characters';
 
-  fetchUrl = 'http://hp-api.herokuapp.com/api/characters'
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
-
-  getCharacters(): Observable<any>{
-    return this.http.get(this.fetchUrl)
-  } 
+  getCharacters(): Observable<any> {
+    return this.http.get(this.fetchUrl);
+  }
 }
