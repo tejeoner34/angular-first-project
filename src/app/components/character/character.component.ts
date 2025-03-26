@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Character } from 'src/app/one-character';
-
+import { TestPipe } from 'src/app/test.pipe';
 @Component({
   selector: 'app-character',
   templateUrl: './character.component.html',
@@ -31,11 +30,11 @@ export class CharacterComponent implements OnInit {
       backgroundSize: 'cover',
       width: '200px',
       height: '300px',
-      borderRadius: '5px'
+      borderRadius: '5px',
     }
 
     this.characterCardStyle = {
-      backgroundImage: `url("../../assets/img/pexels-pixabay-235985.jpg")`,
+      backgroundImage: `url("assets/img/pexels-pixabay-235985.jpg")`,
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
@@ -50,13 +49,11 @@ export class CharacterComponent implements OnInit {
   }
 
   closePopup(){
-    this.displayPopup = false
-    console.log(this.character.name)
-    console.log(this.displayPopup)
+    if(this.displayPopup) this.displayPopup = false
   }
 
   openPopup(){
-    this.displayPopup = true
+    if(!this.displayPopup) this.displayPopup = true
   }
 
 }

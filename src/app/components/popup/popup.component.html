@@ -1,15 +1,17 @@
 <div (click)="onClick()" class="popup-wrapper"></div>
-<div class="popup">
-  <span (click)="onClick()" class="popup__X">X</span>
-  <div class="popup__character-img-container">
-    <img [src]="data.image" alt="">
-  </div>
-  <div class="popup__info-container">
-    <h2>{{ data.name }}</h2>
-    <h3>
-      Date of Birth:
-      {{ data.dateOfBirth === "" ? "Unknown" : data.dateOfBirth }}
-    </h3>
-    <h3>Ancestry: {{ data.ancestry === "" ? "Unknown" : data.ancestry }}</h3>
+<div class="popup-container">
+  <div class="popup">
+    <span (click)="onClick()" class="popup__X">X</span>
+    <div class="popup__character-img-container">
+      <img [src]="data.image" alt="">
+    </div>
+    <div class="popup__info-container">
+      <h2>{{ data.name }}</h2>
+      <h3>
+        Date of Birth:
+        {{ data.dateOfBirth === "" ? "Unknown" : data.dateOfBirth }}
+      </h3>
+      <h3>Ancestry: {{ data.ancestry === "" ? "Unknown" : data.ancestry }}</h3>
+    </div>
   </div>
 </div>
